@@ -1,7 +1,6 @@
 # 지식 통합 기반 질의 응답에서의 RAG, AutoRAG, KAG 성능 비교 분석
 
 이 저장소는 RAG(Retrieval Augmented Generation), AutoRAG, KAG(Knowledge-Augmented Generation) 세 가지 접근법을 한국어 질의응답 환경에서 비교 분석한 실험 기반 연구 내용을 담고 있습니다.  
-본 연구는 동서울대학교 컴퓨터소프트웨어과 및 컴퓨터정보보안과 학부생들에 의해 수행되었습니다.
 
 ## 개요
 
@@ -14,12 +13,14 @@
 ## 시스템 구조 요약
 
 ### AutoRAG
+![image](https://github.com/user-attachments/assets/dd91bfb9-7f67-4865-8223-f6eb0f3507bf)
 
 - 주요 구성: 데이터 생성 → 자동 파이프라인 최적화
 - 질의응답 데이터를 기반으로 다양한 검색 및 생성 조합을 실험하여 최적의 구성 탐색
 - Bridge Comparison 질의 유형에서 강점
 
 ### KAG
+![image](https://github.com/user-attachments/assets/058a21f5-6616-472e-be2c-cf2535e2db94)
 
 - 주요 구성요소: 
   - LLM Friendly Representation
@@ -47,22 +48,15 @@
 
 ### 전체 성능 비교
 
-| 모델 | EM | Relaxed EM | F1 | Similarity |
-|------|----|------------|----|------------|
-| RAG | 0.7% | 50.3% | 0.178 | 0.162 |
-| AutoRAG | 12.1% | 38.9% | 0.235 | 0.232 |
-| KAG | 6.0% | 69.3% | 0.267 | 0.282 |
+![image](https://github.com/user-attachments/assets/9060e6d4-e7bc-4513-97b5-c42a6bfe2fa4)
 
 - EM 기준으로는 AutoRAG가 가장 우수
 - Relaxed EM, F1, Similarity 기준으로는 KAG가 가장 우수
 
-### 질의 유형별 비교 (일부 예시)
+### 질의 유형별 비교 
 
-| 유형 | 모델 | Relaxed EM | Similarity |
-|------|------|-------------|-------------|
-| Comparison | KAG | 93.01% | 0.307 |
-| Bridge Comparison | AutoRAG | 30.88% | 0.381 |
-| Compositional | KAG | 29.82% | 0.336 |
+![image](https://github.com/user-attachments/assets/c9b23b10-f882-4bed-91b0-a1a75f826b8d)
+
 
 ## 결론
 
